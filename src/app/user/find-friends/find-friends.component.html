@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+<body background="assets/todolistbackcover.jpg">
+  <header>
+    <app-header [userName]="userName"></app-header>
+  </header>
+  <main role="main">
+    <div class="container-fluid d-flex" style="justify-content: center;padding-top: 5vh">
+      <div class="row shadow-lg" style="width: 50vw;border-radius: 5vw;padding-right:2vw;padding-left:2vw;">
+        <div class="col-sm" style="border-radius: 5vw;padding-right:2vw;padding-left:2vw;">
+          <ul class="list-group">
+            <li class="list-item-group" *ngIf="usersData.length === 0">No users in the system</li>
+            <li class="list-group-item" *ngFor="let user of usersData;let i = index" (click) = "onSelectUser(user)">
+              <div class="d-flex flex-row flex-wrap">
+                <div class="flex-fill">
+                  <form class="form-inline">
+                    <app-first-char [firstChar]="user.fullName[0]"></app-first-char>
+                    <label class="ml-2">{{user.fullName}} <br> <span class="text-muted">{{user.countryName}}</span></label>
+                  </form>
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

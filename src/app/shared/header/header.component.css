@@ -1,0 +1,18 @@
+li:hover {
+    background: #a9ccfc;
+    cursor: pointer;
+}
+
+.site-header {
+    background-color:#08adff;
+    
+  }
+
+a:hover{
+    background: none;
+}
+
+img {
+    height: 20px;
+    width: 20px;
+}
